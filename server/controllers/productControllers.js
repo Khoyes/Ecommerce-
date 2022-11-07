@@ -46,7 +46,7 @@ exports.createProduct = async (req,res) => {
     }
 
     try{
-        let product = await Product.findOne({new: newProduct.name});
+        let product = await Product.findOne({name: newProduct.name});
         if(product)
         {
             return res.status(500).json({
@@ -82,7 +82,7 @@ exports.updateProduct = async (req,res) => {
         price: req.body.price,
         qty: req.body.qty,
         info: req.body.info
-    }
+    };
 
     try{
         let product = await Product.findById(productId);
