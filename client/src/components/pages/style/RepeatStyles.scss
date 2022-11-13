@@ -1,0 +1,20 @@
+@mixin bg {
+    background: url("https://images.unsplash.com/photo-1586880244406-556ebe35f282?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZWNvbW1lcmNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60") scroll center;
+    background-size: cover;
+    height: 100vh;
+}
+
+@mixin hover {
+    font-weight: bold;
+}
+
+.page {
+    @include bg()
+}
+
+h1 {
+    padding-top: 10px;
+    &:hover {
+        @include hover;
+    }
+}

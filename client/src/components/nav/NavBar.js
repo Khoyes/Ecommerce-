@@ -4,26 +4,30 @@ const NavBar = () => {
 
     return (
       <>
-        <nav className="navbar navbar-expand-lg navbar-danger bg-warning">
+        <nav className="navbar navbar-expand-lg navbar-danger bg-dark">
           <div className="container-fluid">
-            <a className="navbar-brand text-danger" href="#">Ecommerce</a>
+            <a className="navbar-brand text-info" href="#">Ecommerce</a>
             <div className=" navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
   
                 <li className="nav-item">
-                  <Link className="nav-link" aria-current="page" to="/">Home</Link>
+                  <Link className="nav-link text-danger" aria-current="page" to="/">Home</Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-link" aria-current="page" to="/register">Register</Link>
+                  <Link className="nav-link text-danger" aria-current="page" to="/register">Register</Link>
                 </li>
   
                 <li className="nav-item">
-                  <Link className="nav-link" aria-current="page" to="/login">Login</Link>
+                  <Link className="nav-link text-danger" aria-current="page" to="/login">Login</Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-link" aria-current="page" to="/products">Products</Link>
+                  <Link className="nav-link text-danger" aria-current="page" to="/products">Products</Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link className="nav-link text-danger" aria-current="page" to="/products/admin">Admin</Link>
                 </li>
 
               </ul>
