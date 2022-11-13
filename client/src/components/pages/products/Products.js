@@ -30,7 +30,7 @@ const Products = () => {
                 <h1 className="text-info">Manage Products</h1>
 
                 <div className="m-3 p-3 text-center">
-                    <p className="lead text-danger">List of all the available products</p>
+                    <p className="lead text-danger">A list of all the products available</p>
                 </div>
 
                 </div>

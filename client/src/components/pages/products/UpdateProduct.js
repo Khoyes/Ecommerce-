@@ -56,7 +56,6 @@ const UpdateProduct = () => {
         {
             submitted ? (navigate("/products/admin")) : (
                 <>
-                    <pre>{JSON.stringify(selectedProduct)}</pre>
                     <div className="page">
                     <div className="container text-center">
                         <div className="row">

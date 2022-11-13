@@ -48,7 +48,7 @@ const ProductAdmin = () => {
                 <h1 className="text-info">Manage Products</h1>
 
                 <div className="m-3 p-3 text-center">
-                    <p className="lead text-danger">Admin manages products by creating, updating and deleting</p>
+                    <p className="lead text-danger">The admin manages products by: creating, updating and deleting</p>
                     <Link to="/products/create" className="btn btn-dark btn-outline-info">Add Product</Link>
                 </div>
 
