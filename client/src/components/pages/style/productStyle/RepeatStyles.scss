@@ -5,7 +5,10 @@
 }
 
 @mixin hover {
-    font-weight: bold;
+    font-style: italic;
+
+    transform: translate(10%);
+    transition: transform 1s;
 }
 
 .page {
@@ -14,7 +17,13 @@
 
 h1 {
     padding-top: 10px;
+    font-weight: bold;
+    
     &:hover {
         @include hover;
     }
+}
+
+.info {
+    font-weight: bold;
 }

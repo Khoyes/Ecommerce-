@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate,useParams } from "react-router-dom"; //When you want to do POST req and submit form, use this
 import Axios from "axios";
-import "../style/RepeatStyles.css";
+import "../style/productStyle/RepeatStyles.css";
 
 const UpdateProduct = () => {
 

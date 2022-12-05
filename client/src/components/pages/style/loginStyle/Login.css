@@ -1,0 +1,37 @@
+h5 {
+  font-weight: bold;
+}
+
+.form-container {
+  text-align: center;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.form {
+  background-color: white;
+  width: 420px;
+  border-radius: 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.form-content {
+  padding-left: 14%;
+  padding-right: 14%;
+}
+
+.form-title {
+  margin-bottom: 1em;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.login-footer {
+  padding-top: 10px;
+}/*# sourceMappingURL=Login.css.map */
