@@ -6,7 +6,14 @@
 
 h1 {
   padding-top: 10px;
+  font-weight: bold;
 }
 h1:hover {
+  font-style: italic;
+  transform: translate(10%);
+  transition: transform 1s;
+}
+
+.info {
   font-weight: bold;
 }/*# sourceMappingURL=RepeatStyles.css.map */

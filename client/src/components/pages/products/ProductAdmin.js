@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 import Axios from "axios";
-import "../style/RepeatStyles.css"
+import "../style/productStyle/RepeatStyles.css";
+import "../style/productStyle/ProductAdmin.css";
 
 const ProductAdmin = () => {
 
     let [products,setProducts] = useState([]);
     let [errorMessage,setErrorMessage] = useState("");
 
+    let [del,setDel] = useState("");
 
     useEffect(() => {
         getAllProducts();
@@ -39,6 +41,10 @@ const ProductAdmin = () => {
     }
 
 
+    const hoverDelete = () => {
+        setDel("");
+    }
+
     return(
 
         <div className="page">
@@ -47,8 +53,8 @@ const ProductAdmin = () => {
                 <div className="col">
                 <h1 className="text-info">Manage Products</h1>
 
-                <div className="m-3 p-3 text-center">
-                    <p className="lead text-danger">The admin manages products by: creating, updating and deleting</p>
+                <div className="text-center m-2 p-2">
+                    <h5 className="info text-danger p-2">The admin manages products by creating, updating and <span onMouseOver={hoverDelete} className="del">deleting</span></h5>
                     <Link to="/products/create" className="btn btn-dark btn-outline-info">Add Product</Link>
                 </div>
 
@@ -72,13 +78,13 @@ const ProductAdmin = () => {
                                 <>
                                 {products.map((product) => {
                                     return(
-                                        <tr key={product._id}>
-                                            <td>{product._id.substr(product._id.length-4)}</td>
-                                            <td>{product.name}</td>
-                                            <td><img src={product.image} className="img-fluid img-thumbnail" height="70" width="70"/></td>
-                                            <td>{product.price}</td>
-                                            <td>{product.qty}</td>
-                                            <td>{product.info}</td>
+                                        <tr className="table-info" key={product._id}>
+                                            <td className="text-danger">{product._id.substr(product._id.length-4)}</td>
+                                            <td className="text-info">{product.name}</td>
+                                            <td className="text-danger"><img src={product.image} className="img-fluid img-thumbnail" height="70" width="70"/></td>
+                                            <td className="text-info">{product.price}</td>
+                                            <td className="text-danger">{product.qty}</td>
+                                            <td className="text-info">{product.info}</td>
                                             <td>
                                                 <Link to={`/products/${product._id}`} className="btn btn-warning btn-sm m-2">Update</Link>
                                                 <button onClick={handleDeleteProduct.bind(this,product._id)} className="btn btn-danger btn-sm m-2">Delete</button>

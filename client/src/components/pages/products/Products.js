@@ -1,7 +1,6 @@
-import {Link} from "react-router-dom";
 import { useState,useEffect } from "react";
 import Axios from "axios";
-import "../style/RepeatStyles.css"
+import "../style/productStyle/RepeatStyles.css";
 
 const Products = () => {
 
@@ -30,7 +29,7 @@ const Products = () => {
                 <h1 className="text-info">Manage Products</h1>
 
                 <div className="m-3 p-3 text-center">
-                    <p className="lead text-danger">A list of all the products available</p>
+                    <h5 className="info text-danger">A list of all the products available</h5>
                 </div>
 
                 </div>
