@@ -2,6 +2,11 @@ import mongoose from "mongoose";
 
 const ProductSchema = new mongoose.Schema({
 
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        // required: true,
+        // ref: "User", //Know which model the object id belongs to
+    },
     name:
     {
         type: String,
@@ -33,7 +38,8 @@ const ProductSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-});
+ }
+);
 
 let Product = mongoose.model("product", ProductSchema)
 

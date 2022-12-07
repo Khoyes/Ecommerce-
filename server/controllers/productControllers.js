@@ -1,10 +1,10 @@
 import Product from "../models/Products";
-
+import User from "../models/User";
 
 exports.products = async (req,res) => {
 
     try{
-        let products = await Product.find();
+        let products = await Product.find({ user: req.user});
         res.status(200).json(products);
     } 
 
@@ -42,7 +42,8 @@ exports.createProduct = async (req,res) => {
         image: req.body.image,
         price: req.body.price,
         qty: req.body.qty,
-        info: req.body.info
+        info: req.body.info,
+        // user: req.user.id Uncomment this and 3 other parts for user authentication
     }
 
     try{
@@ -81,17 +82,32 @@ exports.updateProduct = async (req,res) => {
         image: req.body.image,
         price: req.body.price,
         qty: req.body.qty,
-        info: req.body.info
+        // info: req.body.info
     };
 
     try{
         let product = await Product.findById(productId);
+
         if(!product)
         {
             return res.status(500).json({
                 msg: "Product Does Not Exist"
             })
         }
+
+        // let user = await User.findById(req.user.id)
+
+        // if(!user){
+        //     res.status(500).json({
+        //         msg: "User doesn't exist"
+        //     })
+        // }
+
+        // if(product.user.toString() != user.id){ 
+        //     res.status(404).json({
+        //         msg: "Not authorized"
+        //     })
+        // }
 
         product = await Product.findByIdAndUpdate(
             productId,
@@ -128,6 +144,20 @@ exports.deleteProduct = async (req,res) => {
                 msg: "Product Does Not Exist"
             })
         }
+
+        // let user = await User.findById(req.user.id)
+
+        // if(!user){
+        //     res.status(500).json({
+        //         msg: "User doesn't exist"
+        //     })
+        // }
+
+        // if(product.user.toString() != user.id){ 
+        //     res.status(404).json({
+        //         msg: "Not authorized"
+        //     })
+        // }
 
         product = await Product.findByIdAndDelete(productId);
 
