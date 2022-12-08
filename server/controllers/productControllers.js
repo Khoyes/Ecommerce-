@@ -4,7 +4,7 @@ import User from "../models/User";
 exports.products = async (req,res) => {
 
     try{
-        let products = await Product.find({ user: req.user});
+        let products = await Product.find(); //{ user: req.user}
         res.status(200).json(products);
     } 
 
@@ -82,7 +82,7 @@ exports.updateProduct = async (req,res) => {
         image: req.body.image,
         price: req.body.price,
         qty: req.body.qty,
-        // info: req.body.info
+        info: req.body.info
     };
 
     try{
